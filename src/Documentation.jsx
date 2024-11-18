@@ -120,6 +120,36 @@ end)`
         }
       ]
     },
+    {
+      "name": "Script Examples",
+      "functions": [
+        {
+          "name": "Test Script",
+          "description" : "Sends a notification when enabled and disabled",
+          "exampleCode": "function onEnable()\n" +
+              "    Notify(\"enabled\")\n" +
+              "end\n" +
+              "\n" +
+              "function onDisable()\n" +
+              "    Notify(\"disabled\")\n" +
+              "end"
+        },
+        {
+          "name": "Location of flarial folder",
+          "description" : "displays flarial folder location",
+          "exampleCode": "function onEnable()\n" +
+              "    Notify(\"enabled\")\n" +
+              "end\n" +
+              "\n" +
+              "function renderEvent()\n" +
+              "     GUI.TextWithFont(10, 10, getRoamingPath(), 3.0, 3.0, 3.0)\n"+
+              "end\n" +
+              "function onDisable()\n" +
+              "    Notify(\"disabled\")\n" +
+              "end",
+        }
+      ]
+    }
   ];
 
   const [currentClass, setCurrentClass] = useState(null);
@@ -162,7 +192,7 @@ end`;
               <p>Scripts can be found in the script browser (TBD), however you can add one yourself by pasting the script folder in this path</p>
               <i>this location can change if you have a version switcher</i>
               <CodeBlock code="%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Flarial\scripts" />
-              <p><strong>WARNING:</strong>Scripts from external sources can contain unwanted abilities</p>
+              <p class="warn"><strong>WARNING: </strong>Scripts from external sources can have unwanted features</p>
             </div>
 
             <div className="function-section">
@@ -176,7 +206,7 @@ end`;
               <p class="text-2xl font-bold">Creating your first script</p>
               <p>Create a new folder with the name of your script, and make "scriptname".json file in:</p>
               <CodeBlock code="%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Flarial\scripts" />
-              <p>Content of your "scriptname".json file shoud be: </p>
+              <p>Content of your "scriptname".json file should be: </p>
               <CodeBlock code={manifestFileCOntent} />
 
 
@@ -185,6 +215,7 @@ end`;
               <p>Create "scriptname".lua file</p>
               <p>Minimal script:</p>
               <CodeBlock code={minScriptContent} />
+              <p>Look at script examples for more</p>
             </div>
         </div>
       );

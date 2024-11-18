@@ -8,6 +8,10 @@ body {
 .documentation {
   display: flex;
 }
+.warn{
+  color: red;
+  font-weight: bold;
+}
 
 .sidebar {
   width: 20%;
