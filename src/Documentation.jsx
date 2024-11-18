@@ -159,9 +159,10 @@ end`;
             <div className="function-section">
               <p class="text-2xl font-bold">About</p>
               <p>Flarial scripting api uses lua 5.4.7. Scripting api allows you to create you own custom modules.</p>
-              <p>Scripts are available in buildin script browser. But you can add custom one using this path:</p>
+              <p>Scripts can be found in the script browser (TBD), however you can add one yourself by pasting the script folder in this path</p>
+              <i>this location can change if you have a version switcher</i>
               <CodeBlock code="%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Flarial\scripts" />
-              <p>BE AWARE that custom scripts that are not available in script browser are not verified by staff and might contain: ip loggers, stealers, etc...</p>
+              <p><strong>WARNING:</strong>Scripts from external sources can contain unwanted abilities</p>
             </div>
 
             <div className="function-section">
@@ -173,7 +174,7 @@ end`;
 
             <div className="function-section">
               <p class="text-2xl font-bold">Creating your first script</p>
-              <p>Create "scriptname".json file in:</p>
+              <p>Create a new folder with the name of your script, and make "scriptname".json file in:</p>
               <CodeBlock code="%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Flarial\scripts" />
               <p>Content of your "scriptname".json file shoud be: </p>
               <CodeBlock code={manifestFileCOntent} />
