@@ -6,100 +6,66 @@ import CodeBlock from "./CodeBlock";
 const Documentation = () => {
   const classData = [
     {
-      name: "Global",
-      functions: [
-        { 
-          name: "Notify", 
-          description: "Displays notification on screen", 
-          exampleCode: "Notify(message)" 
+      "name": "Global",
+      "functions": [
+        {
+          "name": "Notify",
+          "description": "Displays notification on screen",
+          "exampleCode": "Notify(message)"
         },
         {
-          name: "getRoamingPath",
-          description: "returns path to the minecraft folder",
-          exampleCode: "getRoamingPath()" 
+          "name": "getRoamingPath",
+          "description": "returns path to the minecraft folder",
+          "exampleCode": "getRoamingPath()"
         },
         {
-          name: "getFlarialPath",
-          description: "returns path to the flarial folder",
-          exampleCode: "getFlarialPath()"
+          "name": "getFlarialPath",
+          "description": "returns path to the flarial folder",
+          "exampleCode": "getFlarialPath()"
         },
-        { 
-          name: "onEvent", 
-          description: `
-          <p>Event listener</p>
-          event name list:
-          
-          <table style="width:100%">
-            <tr>
-              <th>Name</th>
-              <th>Argument</th>
-            </tr>
-            <tr>
-              <td>onKeyEvent</td>
-              <td>int: key, int: action</td>
-            </tr>
-            <tr>
-              <td>onMouseEvent</td>
-              <td>int: button, int: action</td>
-            </tr>
-            <tr>
-              <td>onPacketReceiveEvent</td>
-              <td>int: packet id</td>
-            </tr>
-            <tr>
-              <td>onTickEvent</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>onRenderEvent</td>
-              <td></td>
-            </tr>
-          </table>
-          `, 
-          exampleCode: `onEvent(eventname, function()
-end)` 
-        },
-      ],
+        {
+          "name": "onEvent",
+          "description": "\n          <p>Event listener</p>\n          event name list:\n          \n          <table style=\"width:100%\">\n            <tr>\n              <th>Name</th>\n              <th>Argument</th>\n            </tr>\n            <tr>\n              <td>onKeyEvent</td>\n              <td>int: key, int: action</td>\n            </tr>\n            <tr>\n              <td>onMouseEvent</td>\n              <td>int: button, int: action</td>\n            </tr>\n            <tr>\n              <td>onPacketReceiveEvent</td>\n              <td>int: packet id</td>\n            </tr>\n            <tr>\n              <td>onTickEvent</td>\n              <td></td>\n            </tr>\n            <tr>\n              <td>onRenderEvent</td>\n              <td></td>\n            </tr>\n          </table>\n          ",
+          "exampleCode": "onEvent(eventname, function()\nend)"
+        }
+      ]
     },
     {
-      name: "GUI",
-      functions: [
+      "name": "GUI",
+      "functions": [
         {
-          name: "Color",
-          description: "returns color",
-
-          exampleCode: "GUI.Color(float: r, float: g, float: b, float: a) " 
+          "name": "Color",
+          "description": "returns color",
+          "exampleCode": "GUI.Color(float: r, float: g, float: b, float: a) "
         },
         {
-          name: "RoundedRect",
-          note: {
-            icon: "*",
-            note: "Should only be executed in onRenderEvent",
+          "name": "RoundedRect",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in onRenderEvent"
           },
-          description: `<p>Draws RoundedRect on screen</p>`,
-          exampleCode: "GUI.RoundedRect(int: x, int: y, GUI.Color: color, float: radiusX, float: radiusY, float: height, float: width)" 
+          "description": "<p>Draws RoundedRect on screen</p>",
+          "exampleCode": "GUI.RoundedRect(int: x, int: y, GUI.Color: color, float: radiusX, float: radiusY, float: height, float: width)"
         },
         {
-          name: "TextWithFont",
-          note: {
-            icon: "*",
-            note: "Should only be executed in onRenderEvent",
+          "name": "TextWithFont",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in onRenderEvent"
           },
-          description: `Draws text <p>Shoud be executed only in onRenderEvent</p> <p>Recommended to use Constraints for a font size`, 
-          exampleCode: "GUI.TextWithFont(int: x, int: y, string: text, float: height, float: width, float: fontSize) " 
+          "description": "Draws text <p>Shoud be executed only in onRenderEvent</p> <p>Recommended to use Constraints for a font size",
+          "exampleCode": "GUI.TextWithFont(int: x, int: y, string: text, float: height, float: width, float: fontSize) "
         },
         {
-          name: "RoundedHollowRect",
-          note: {
-            icon: "*",
-            note: "Should only be executed in onRenderEvent",
+          "name": "RoundedHollowRect",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in onRenderEvent"
           },
-          description: `<p>Draws RoundedHollowRect on screen</p>
-          Should be executed only in onRenderEvent
-          `, 
-          exampleCode: "GUI.RoundedHollowRect(int: x, int: y, GUI.Color: color,float: height float: width, float: rounding, float: shadowSize)" 
-        },
-      ],
+          "description": "<p>Draws RoundedHollowRect on screen</p>\n          Should be executed only in onRenderEvent\n          ",
+          "exampleCode": "GUI.RoundedHollowRect(int: x, int: y, GUI.Color: color,float: height float: width, float: rounding, float: shadowSize)"
+        }
+      ]
     },
     {
       "name": "Constraints",
@@ -166,29 +132,57 @@ end)`
       "functions": [
         {
           "name": "Test Script",
-          "description" : "Sends a notification when enabled and disabled",
-          "exampleCode": `function onEnable()
-  Notify("enabled")
-end
-              
-function onDisable()
-  Notify("disabled")
-end`
+          "description": "Sends a notification when enabled and disabled",
+          "exampleCode": "function onEnable()\n  Notify(\"enabled\")\nend\n              \nfunction onDisable()\n  Notify(\"disabled\")\nend"
         },
         {
           "name": "Location of flarial folder",
-          "description" : "displays flarial folder location",
-          "exampleCode": `function onEnable()
-  Notify("enabled")
-end
-
-onEvent("onRenderEvent", function()
-  GUI.TextWithFont(50, 100, getFlarialPath(), 200, 50, Constraints.RelativeConstraint(0.25, "height"))
-end)
-
-function onDisable()
-  Notify("disabled")
-end`
+          "description": "displays flarial folder location",
+          "exampleCode": "function onEnable()\n  Notify(\"enabled\")\nend\n\nonEvent(\"onRenderEvent\", function()\n  GUI.TextWithFont(50, 100, getFlarialPath(), 200, 50, Constraints.RelativeConstraint(0.25, \"height\"))\nend)\n\nfunction onDisable()\n  Notify(\"disabled\")\nend"
+        },
+        {
+          "name": "Settings usage",
+          "description": "example settings usage",
+          "exampleCode": "function onEnable()\n    Notify(\"enabled\")\nend\n\nfunction onDisable()\n    Notify(\"disabled\")\nend\n\nfunction defaultConfig()\n    Settings.CreateSetting(\"test\", \"aaa\")\n    Settings.CreateSetting(\"testbool\", true)\n    Settings.CreateSetting(\"testfloat\", 1.0)\nend\n\nfunction settingsRender()\n    Settings.AddHeader('Settings.AddTextBox(\"test\", \"test textbox\", \"lol\")')\n    Settings.AddTextBox(\"test\", \"test textbox\", \"lol\")\n    Settings.AddHeader('Settings.AddToggle(\"testbool\", \"test texttoggle\", \"\")')\n    Settings.AddToggle(\"testbool\", \"test texttoggle\", \"\")\n    Settings.AddHeader('Settings.AddSlider(\"testfloat\", \"test slider\", \"\", 0, 2.0)')\n    Settings.AddSlider(\"testfloat\", \"test slider\", \"\", 0, 2.0)\n    Settings.AddHeader(\"Settings.AddHeader('test')\")\n    Settings.AddHeader('test')\nend\n\nonEvent(\"onRenderEvent\", function()\n\n    GUI.TextWithFont(50, 100, Settings.GetSetting(\"test\", \"string\"), 200, 50, Constraints.RelativeConstraint(0.25, \"height\"))\n\nend)\n"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "functions": [
+        {
+          "name": "CreateSetting",
+          "note": {
+            "icon": "*",
+            "note": "recomended to execute in defaultConfig function"
+          },
+          "description": "Creates setting. Accepts string number and bool",
+          "exampleCode": "Settings.CreateSetting(name, value)"
+        },
+        {
+          "name": "GetSetting",
+          "description": "Getting setting",
+          "exampleCode": "Settings.GetSetting(name, type aka string, number, boolean)"
+        },
+        {
+          "name": "AddHeader",
+          "description": "adds header ",
+          "exampleCode": "Settings.AddHeader(text)"
+        },
+        {
+          "name": "AddTextBox",
+          "description": "adds textbox",
+          "exampleCode": "Settings.AddTextBox(setting name, textbox name, textbox description)"
+        },
+        {
+          "name": "AddToggle",
+          "description": "Adds toggle",
+          "exampleCode": "Settings.AddToggle(setting name, toggle name, toggle description)"
+        },
+        {
+          "name": "AddSlider",
+          "description": "Adds slider",
+          "exampleCode": "Settings.AddSlider(setting name, slider name, slider description, minValue, maxVlue)"
         }
       ]
     }
