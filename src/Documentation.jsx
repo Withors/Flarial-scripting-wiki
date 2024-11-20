@@ -246,9 +246,9 @@ end`;
 
             <div className="function-section">
               <p class="text-2xl font-bold">Creating your first script</p>
-              <p>Create a new folder with the name of your script, and make "scriptname".json file in:</p>
+              <p>Create a new folder with the name of your script, and make main.json file in:</p>
               <CodeBlock code="%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Flarial\scripts" />
-              <p>Content of your "scriptname".json file should be: </p>
+              <p>Content of your main.json file should be: </p>
               <CodeBlock code={manifestFileCOntent} />
 
 
