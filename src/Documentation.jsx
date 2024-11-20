@@ -138,11 +138,28 @@ end)`
     },
     {
       "name": "Player",
-      "functions": [{
-        "name": "getPlayerName",
-        "description": "returns the name of the player",
-        "exampleCode": "player.getPlayerName()"
-      }]
+      "functions": [
+        {
+          "name": "getPlayerName",
+          "description": "returns the name of the player",
+          "exampleCode": "player.getPlayerName()"
+        },
+        {
+          "name": "getX",
+          "description": "returns player X",
+          "exampleCode": "player.getX()"
+        },
+        {
+          "name": "getY",
+          "description": "returns player Y",
+          "exampleCode": "player.getY()"
+        },
+        {
+          "name": "getZ",
+          "description": "returns player Z",
+          "exampleCode": "player.getZ()"
+        }
+      ]
     },
     {
       "name": "Script Examples",
@@ -150,27 +167,28 @@ end)`
         {
           "name": "Test Script",
           "description" : "Sends a notification when enabled and disabled",
-          "exampleCode": "function onEnable()\n" +
-              "    Notify(\"enabled\")\n" +
-              "end\n" +
-              "\n" +
-              "function onDisable()\n" +
-              "    Notify(\"disabled\")\n" +
-              "end"
+          "exampleCode": `function onEnable()
+  Notify("enabled")
+end
+              
+function onDisable()
+  Notify("disabled")
+end`
         },
         {
           "name": "Location of flarial folder",
           "description" : "displays flarial folder location",
-          "exampleCode": "function onEnable()\n" +
-              "    Notify(\"enabled\")\n" +
-              "end\n" +
-              "\n" +
-              "function renderEvent()\n" +
-              "     GUI.TextWithFont(10, 10, getFlarialPath(), 3.0, 3.0, 3.0)\n" +
-              "end\n" +
-              "function onDisable()\n" +
-              "    Notify(\"disabled\")\n" +
-              "end",
+          "exampleCode": `function onEnable()
+  Notify("enabled")
+end
+
+onEvent("onRenderEvent", function()
+  GUI.TextWithFont(50, 100, getFlarialPath(), 200, 50, Constraints.RelativeConstraint(0.25, "height"))
+end)
+
+function onDisable()
+  Notify("disabled")
+end`
         }
       ]
     }
