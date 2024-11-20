@@ -13,10 +13,15 @@ const Documentation = () => {
           description: "Displays notification on screen", 
           exampleCode: "Notify(message)" 
         },
-        { 
-          name: "getRoamingPath", 
-          description: "returns path to flarial folder", 
+        {
+          name: "getRoamingPath",
+          description: "returns path to the minecraft folder",
           exampleCode: "getRoamingPath()" 
+        },
+        {
+          name: "getFlarialPath",
+          description: "returns path to the flarial folder",
+          exampleCode: "getFlarialPath()"
         },
         { 
           name: "onEvent", 
@@ -59,27 +64,38 @@ end)`
     {
       name: "GUI",
       functions: [
-        { 
-          name: "Color", 
-          description: "returns color", 
+        {
+          name: "Color",
+          description: "returns color",
+
           exampleCode: "GUI.Color(float: r, float: g, float: b, float: a) " 
         },
-        { 
-          name: "RoundedRect", 
-          description: `<p>Draws RoundedRect on screen</p>
-          Shoud be executed only in onRenderEvent
-          `, 
+        {
+          name: "RoundedRect",
+          note: {
+            icon: "*",
+            note: "Should only be executed in onRenderEvent",
+          },
+          description: `<p>Draws RoundedRect on screen</p>`,
           exampleCode: "GUI.RoundedRect(int: x, int: y, GUI.Color: color, float: radiusX, float: radiusY, float: height, float: width)" 
         },
-        { 
-          name: "TextWithFont", 
+        {
+          name: "TextWithFont",
+          note: {
+            icon: "*",
+            note: "Should only be executed in onRenderEvent",
+          },
           description: `Draws text <p>Shoud be executed only in onRenderEvent</p> <p>Recommended to use Constraints for a font size`, 
           exampleCode: "GUI.TextWithFont(int: x, int: y, string: text, float: height, float: width, float: fontSize) " 
         },
-        { 
-          name: "RoundedHollowRect", 
+        {
+          name: "RoundedHollowRect",
+          note: {
+            icon: "*",
+            note: "Should only be executed in onRenderEvent",
+          },
           description: `<p>Draws RoundedHollowRect on screen</p>
-          Shoud be executed only in onRenderEvent
+          Should be executed only in onRenderEvent
           `, 
           exampleCode: "GUI.RoundedHollowRect(int: x, int: y, GUI.Color: color,float: height float: width, float: rounding, float: shadowSize)" 
         },
@@ -121,6 +137,14 @@ end)`
       ]
     },
     {
+      "name": "Player",
+      "functions": [{
+        "name": "getPlayerName",
+        "description": "returns the name of the player",
+        "exampleCode": "player.getPlayerName()"
+      }]
+    },
+    {
       "name": "Script Examples",
       "functions": [
         {
@@ -142,7 +166,7 @@ end)`
               "end\n" +
               "\n" +
               "function renderEvent()\n" +
-              "     GUI.TextWithFont(10, 10, getRoamingPath(), 3.0, 3.0, 3.0)\n"+
+              "     GUI.TextWithFont(10, 10, getFlarialPath(), 3.0, 3.0, 3.0)\n" +
               "end\n" +
               "function onDisable()\n" +
               "    Notify(\"disabled\")\n" +

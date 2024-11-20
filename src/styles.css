@@ -13,6 +13,23 @@ body {
   font-weight: bold;
 }
 
+.note {
+  color: yellow;
+  font-style: italic;
+  display: inline;
+}
+
+.note-wrapper {
+  display: none;
+
+}
+
+.note:hover + .note-wrapper {
+  display: inline;
+  font-style: italic;
+  color: yellow;
+  font-size: 10px;
+}
 .sidebar {
   width: 20%;
   background-color: #1e1e1e;

@@ -29,10 +29,13 @@ const Sidebar = ({ classes = [], onFunctionSelect }) => {
                   {fn.name}
                 </button>
               ))}
+
             </div>
           )}
+
         </div>
       ))}
+
     </div>
   );
 };
