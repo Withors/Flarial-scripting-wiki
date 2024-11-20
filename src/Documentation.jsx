@@ -166,21 +166,37 @@ const Documentation = () => {
         },
         {
           "name": "AddHeader",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in settingsRender function"
+          },
           "description": "adds header ",
           "exampleCode": "Settings.AddHeader(text)"
         },
         {
           "name": "AddTextBox",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in settingsRender function"
+          },
           "description": "adds textbox",
           "exampleCode": "Settings.AddTextBox(setting name, textbox name, textbox description)"
         },
         {
           "name": "AddToggle",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in settingsRender function"
+          },
           "description": "Adds toggle",
           "exampleCode": "Settings.AddToggle(setting name, toggle name, toggle description)"
         },
         {
           "name": "AddSlider",
+          "note": {
+            "icon": "*",
+            "note": "Should only be executed in settingsRender function"
+          },
           "description": "Adds slider",
           "exampleCode": "Settings.AddSlider(setting name, slider name, slider description, minValue, maxVlue)"
         }
