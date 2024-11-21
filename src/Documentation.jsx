@@ -25,8 +25,8 @@ const Documentation = () => {
         },
         {
           "name": "onEvent",
-          "description": "\n          <p>Event listener</p>\n          event name list:\n          \n          <table style=\"width:100%\">\n            <tr>\n              <th>Name</th>\n              <th>Argument</th>\n            </tr>\n            <tr>\n              <td>onKeyEvent</td>\n              <td>int: key, int: action</td>\n            </tr>\n            <tr>\n              <td>onMouseEvent</td>\n              <td>int: button, int: action</td>\n            </tr>\n            <tr>\n              <td>onPacketReceiveEvent</td>\n              <td>int: packet id</td>\n            </tr>\n            <tr>\n              <td>onTickEvent</td>\n              <td></td>\n            </tr>\n            <tr>\n              <td>onRenderEvent</td>\n              <td></td>\n            </tr>\n          </table>\n          ",
-          "exampleCode": "onEvent(eventname, function()\nend)"
+          "description": "          <p>Event listener</p>\n          EventType class:\n          \n          <table style=\"width:100%\">\n            <tr>\n              <th>Name</th>\n              <th>Argument</th>\n            </tr>\n            <tr>\n              <td>onKeyEvent</td>\n              <td>int: key, int: action</td>\n            </tr>\n            <tr>\n              <td>onMouseEvent</td>\n              <td>int: button, int: action</td>\n            </tr>\n            <tr>\n              <td>onPacketReceiveEvent</td>\n              <td>int: packet id</td>\n            </tr>\n            <tr>\n              <td>onTickEvent</td>\n              <td></td>\n            </tr>\n            <tr>\n              <td>onRenderEvent</td>\n              <td></td>\n            </tr>\n          </table>\n          ",
+          "exampleCode": "onEvent(EventType: eventname, function()\nend)"
         }
       ]
     },
@@ -138,12 +138,12 @@ const Documentation = () => {
         {
           "name": "Location of flarial folder",
           "description": "displays flarial folder location",
-          "exampleCode": "function onEnable()\n  Notify(\"enabled\")\nend\n\nonEvent(\"onRenderEvent\", function()\n  GUI.TextWithFont(50, 100, getFlarialPath(), 200, 50, Constraints.RelativeConstraint(0.25, \"height\"))\nend)\n\nfunction onDisable()\n  Notify(\"disabled\")\nend"
+          "exampleCode": "function onEnable()\n  Notify(\"enabled\")\nend\n\nonEvent(EventType.onRenderEvent, function()\n  GUI.TextWithFont(50, 100, getFlarialPath(), 200, 50, Constraints.RelativeConstraint(0.25, \"height\"))\nend)\n\nfunction onDisable()\n  Notify(\"disabled\")\nend"
         },
         {
           "name": "Settings usage",
           "description": "example settings usage",
-          "exampleCode": "function onEnable()\n    Notify(\"enabled\")\nend\n\nfunction onDisable()\n    Notify(\"disabled\")\nend\n\nfunction defaultConfig()\n    Settings.CreateSetting(\"test\", \"aaa\")\n    Settings.CreateSetting(\"testbool\", true)\n    Settings.CreateSetting(\"testfloat\", 1.0)\nend\n\nfunction settingsRender()\n    Settings.AddHeader('Settings.AddTextBox(\"test\", \"test textbox\", \"lol\")')\n    Settings.AddTextBox(\"test\", \"test textbox\", \"lol\")\n    Settings.AddHeader('Settings.AddToggle(\"testbool\", \"test texttoggle\", \"\")')\n    Settings.AddToggle(\"testbool\", \"test texttoggle\", \"\")\n    Settings.AddHeader('Settings.AddSlider(\"testfloat\", \"test slider\", \"\", 0, 2.0)')\n    Settings.AddSlider(\"testfloat\", \"test slider\", \"\", 0, 2.0)\n    Settings.AddHeader(\"Settings.AddHeader('test')\")\n    Settings.AddHeader('test')\nend\n\nonEvent(\"onRenderEvent\", function()\n\n    GUI.TextWithFont(50, 100, Settings.GetSetting(\"test\", \"string\"), 200, 50, Constraints.RelativeConstraint(0.25, \"height\"))\n\nend)\n"
+          "exampleCode": "function onEnable()\n    Notify(\"enabled\")\nend\n\nfunction onDisable()\n    Notify(\"disabled\")\nend\n\nfunction defaultConfig()\n    Settings.CreateSetting(\"test\", \"aaa\")\n    Settings.CreateSetting(\"testbool\", true)\n    Settings.CreateSetting(\"testfloat\", 1.0)\nend\n\nfunction settingsRender()\n    Settings.AddHeader('Settings.AddTextBox(\"test\", \"test textbox\", \"lol\")')\n    Settings.AddTextBox(\"test\", \"test textbox\", \"lol\")\n    Settings.AddHeader('Settings.AddToggle(\"testbool\", \"test texttoggle\", \"\")')\n    Settings.AddToggle(\"testbool\", \"test texttoggle\", \"\")\n    Settings.AddHeader('Settings.AddSlider(\"testfloat\", \"test slider\", \"\", 0, 2.0)')\n    Settings.AddSlider(\"testfloat\", \"test slider\", \"\", 0, 2.0)\n    Settings.AddHeader(\"Settings.AddHeader('test')\")\n    Settings.AddHeader('test')\nend\n\nonEvent(EventType.onRenderEvent, function()\n\n    GUI.TextWithFont(50, 100, Settings.GetSetting(\"test\", \"string\"), 200, 50, Constraints.RelativeConstraint(0.25, \"height\"))\n\nend)\n"
         }
       ]
     },
